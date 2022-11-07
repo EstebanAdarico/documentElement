@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>probandofunciones</title>
+</head>
+<body>
+ <h1>hola mundo </h1>
+ <button onclick='saludar("maria")'>saludar maria</button>
+ <button onclick='saludar("esteban")'>saludar esteban</button>
+ <button onclick='saludar("juan")'>saludar juan</button>
+
+ <div style="margin:20px" id="paraElBoton">hola muy buenas</div>
+ <script>
+  var timeFor = new Date()
+  var hours = timeFor.getHours();
+
+
+  function saludar(nombre){
+   //como vamos al documento desde al consola
+   //lo primero que necesitamos tomar el document y seleccionarlo por  nombre que es su id
+   
+   var divSaludar = document.getElementById("paraElBoton")
+   //si son entre las 7 de la mañana y las 13 = "buenos dias"
+   //si son entre las 13 de la mañana y las 19 = "buenos tardes"
+   //si son entre las 19 de la mañana 7 las 6 = "buenos noches"
+   if (7 <=  hours <= 13){
+    divSaludar.innerHTML = ` hola , muy buenas dias ${nombre} por que es ${hours}`
+    console.log(`${nombre}`)
+   }else if(13<=hours <=19){
+    divSaludar.innerHTML = `hola , buenas tardes ${nombre} por que es ${hours}`
+   }else if( 19<=hours<=6){
+    divSaludar.innerHTML = `hola , bunas noches ${nombre} por que es ${hours}`
+   }
+   
+
+  }
+  //aqui es donde va el parámetro
+  
+  
+  
+ </script>
+</body>
+</html>
